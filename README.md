@@ -26,4 +26,4 @@ The parameters and their default values correspond to the parameters of the [ter
 
 ### TODO
 
-- Switch to `jackc/tern` docker image after release
+- [ ] Switch to `jackc/tern` docker image after release
