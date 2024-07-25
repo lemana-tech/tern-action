@@ -1,0 +1,38 @@
+name: 'Tern Migrator'
+description: 'Runs database migrations using the tern tool'
+author: 'Marat F'
+
+inputs:
+  conn_string:
+    description: 'Database connection string'
+    required: true
+  command:
+    description: 'Command to run'
+    required: false
+    default: 'migrate'
+  destination:
+    description: 'Destination migration version'
+    required: false
+    default: 'last'
+  migrations:
+    description: 'Path to migrations directory'
+    required: false
+    default: '.'
+  version_table:
+    description: 'Version table name'
+    required: false
+    default: 'public.schema_version'
+
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/lemana-tech/tern:v2.2.2-rc.0'
+  args:
+    - ${{ inputs.command }}
+    - --conn-string=${{ inputs.conn_string }}
+    - --destination=${{ inputs.destination }}
+    - --migrations=${{ inputs.migrations }}
+    - --version-table=${{ inputs.version_table }}
+
+branding:
+  icon: 'database'
+  color: 'white'
