@@ -20,7 +20,7 @@ The parameters and their default values correspond to the parameters of the [ter
 - name: migrate
   uses: lemana-tech/tern-action@v1
   with:
-    conn_string: ${{ env.DBAAS_LEGACY_DATABASE_URL }}
+    conn_string: postgres://user:password@host:port
     migrations: migrations
 ```
 
