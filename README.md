@@ -23,7 +23,3 @@ The parameters and their default values correspond to the parameters of the [ter
     conn_string: postgres://user:password@host:port
     migrations: migrations
 ```
-
-### TODO
-
-- [ ] Switch to `jackc/tern` docker image after release
