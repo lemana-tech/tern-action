@@ -25,7 +25,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/lemana-tech/tern:v2.2.2-rc.0'
+  image: 'docker://ghcr.io/jackc/tern:v2.2.3'
   args:
     - ${{ inputs.command }}
     - --conn-string=${{ inputs.conn_string }}
